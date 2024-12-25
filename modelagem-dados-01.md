@@ -1,0 +1,78 @@
+# Modelagem de Dados (Banco de Dados)
+- Introdução
+    - O que é modelagem de dados
+        - Representação gráfica da estrutura de dados
+        - Processo de organização de dados para sistemas
+    - Importância
+        - Comunicação entre equipes
+        - Organização da estrutura de dados
+        - Garantia de consistência
+        - Flexibilidade para mudanças
+- Camadas da Modelagem
+    - Conceitual
+        - Foco: Visão de negócio
+        - Componentes: Entidades, atributos, relacionamentos
+        - Representação: Diagrama Entidade-Relacionamento (DER)
+    - Lógica
+        - Foco: Estrutura dos dados
+        - Componentes: Tabelas, colunas, tipos de dados, chaves primárias e estrangeiras
+        - Representação: Diagrama de Tabelas e Relacionamentos, Modelo Relacional
+    - Física
+        - Foco: Implementação física
+        - Componentes: Tabelas, índices, tipos de dados específicos do SGBD, particionamento
+        - Representação: Diagramas específicos do SGBD, scripts DDL
+    - Dimensional
+        - Foco: Otimização para análise de dados
+        - Componentes: Fatos, dimensões, hierarquias, indicadores de performance
+        - Representação: Modelo Dimensional, Modelo Estrela ou Floco de Neve
+- Modelo Relacional
+    - Conceitos
+        - Relações (tabelas)
+        - Tuplas (linhas)
+        - Atributos (colunas)
+    - Chaves
+        - Chave Primária (PK)
+        - Chave Estrangeira (FK)
+        - Chave Candidata (CK)
+        - Chave Composta
+    - Normalização
+        - Formas Normais (1FN, 2FN, 3FN, BCNF)
+        - Redução da redundância e anomalias
+        - Dependências Funcionais
+- Tipos de Dados
+    - Numéricos
+        - Inteiros (INT, BIGINT)
+        - Decimais (FLOAT, DOUBLE, DECIMAL)
+    - Textuais
+        - Caracteres (CHAR, VARCHAR)
+        - Textos Longos (TEXT)
+    - Booleanos (BOOLEAN)
+    - Data e Hora (DATE, TIME, DATETIME, TIMESTAMP)
+    - Outros (BLOB, CLOB)
+- Linguagem SQL
+    - DDL (Linguagem de Definição de Dados)
+        - CREATE, ALTER, DROP
+    - DML (Linguagem de Manipulação de Dados)
+        - SELECT, INSERT, UPDATE, DELETE
+    - DCL (Linguagem de Controle de Dados)
+        - GRANT, REVOKE
+    - DQL (Linguagem de Consulta de Dados)
+    - Transações
+        - BEGIN, COMMIT, ROLLBACK
+- SGBDs (Sistemas de Gerenciamento de Bancos de Dados)
+    - RDBMS (Sistemas de Gerenciamento de Bancos de Dados Relacionais)
+        - MySQL, PostgreSQL, Oracle, SQL Server
+    - NoSQL (Sistemas de Gerenciamento de Bancos de Dados Não Relacionais)
+        - MongoDB, Cassandra, Redis
+- Projeto de Banco de Dados
+    - Levantamento de Requisitos
+    - Modelagem Conceitual
+    - Modelagem Lógica
+    - Modelagem Física
+    - Implementação
+    - Testes
+- Integridade de Dados
+    - Integridade de Domínio
+    - Integridade de Entidade
+    - Integridade Referencial
+    - Integridade Definida pelo Usuário
