@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.8/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.8/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.8/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:x,mm:K}=window,P=new x.Toolbar;P.attach(K);const F=P.render();F.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(F)})})()</script><script>((b,L,T,D)=>{const H=b();window.mm=H.Markmap.create("svg#mindmap",(L||H.deriveOptions)(D),T)})(()=>window.markmap,null,{"content":"Dockerfile Tomcat","children":[{"content":"Imagem Base","children":[{"content":"Utiliza <code>openjdk:11.0.14.1-jdk-oracle</code> como imagem base.","children":[{"content":"<code>FROM openjdk:11.0.14.1-jdk-oracle</code>","children":[],"payload":{"tag":"li","lines":"4,6"}}],"payload":{"tag":"li","lines":"3,6"}}],"payload":{"tag":"h2","lines":"2,3"}},{"content":"Cópia do JAR","children":[{"content":"Copia o arquivo <code>autoriza-api.jar</code> para o container.","children":[{"content":"<code>ADD target/autoriza-api.jar /app.jar</code>","children":[],"payload":{"tag":"li","lines":"8,10"}}],"payload":{"tag":"li","lines":"7,10"}}],"payload":{"tag":"h2","lines":"6,7"}},{"content":"Exposição da Porta","children":[{"content":"Expõe a porta <code>8081</code>.","children":[{"content":"<code>EXPOSE 8081</code>","children":[],"payload":{"tag":"li","lines":"12,14"}}],"payload":{"tag":"li","lines":"11,14"}}],"payload":{"tag":"h2","lines":"10,11"}},{"content":"Variáveis de Ambiente","children":[{"content":"Define as variáveis de ambiente para o banco de dados e oauth.","children":[{"content":"<code>ENV TZ America/Sao_Paulo</code>","children":[],"payload":{"tag":"li","lines":"16,17"}},{"content":"<code>ARG URLDATABASEAPP</code>","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"<code>ARG USERDATABASEAPP</code>","children":[],"payload":{"tag":"li","lines":"18,19"}},{"content":"<code>ARG PWDDATABASEAPP</code>","children":[],"payload":{"tag":"li","lines":"19,20"}},{"content":"<code>ARG URLOAUTHAPP</code>","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"<code>ENV envUrlDatabase $URLDATABASEAPP</code>","children":[],"payload":{"tag":"li","lines":"21,22"}},{"content":"<code>ENV envUserDatabase $USERDATABASEAPP</code>","children":[],"payload":{"tag":"li","lines":"22,23"}},{"content":"<code>ENV envPwdDatabase $PWDDATABASEAPP</code>","children":[],"payload":{"tag":"li","lines":"23,24"}},{"content":"<code>ENV envUrlOauth $URLOAUTHAPP</code>","children":[],"payload":{"tag":"li","lines":"24,26"}}],"payload":{"tag":"li","lines":"15,26"}}],"payload":{"tag":"h2","lines":"14,15"}},{"content":"Entrypoint","children":[{"content":"Executa a aplicação Java usando <code>java $JAVA_OPTS ... -jar /app.jar $JAVA_PARAMS</code>","children":[{"content":"<code>ENTRYPOINT java $JAVA_OPTS -Dspring.datasource.url=$envUrlDatabase \\ -Dspring.datasource.username=$envUserDatabase \\ -Dspring.datasource.password=$envPwdDatabase \\ -Dspring.security.oauth2.resourceserver.jwt.issuer-uri=$envUrlOauth \\ -jar /app.jar $JAVA_PARAMS</code>","children":[],"payload":{"tag":"li","lines":"28,33"}}],"payload":{"tag":"li","lines":"27,33"}}],"payload":{"tag":"h2","lines":"26,27"}}],"payload":{"tag":"h1","lines":"0,1"}},null)</script>
+</body>
+</html>
